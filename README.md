@@ -1,4 +1,4 @@
-# Firstock Connect API Python Client - v4
+# Firstock Connect API Python Client 
 
 The official Python library for the Firstock Connect API, providing a seamless interaction with Firstock's trading and financial data services. This library has been designed for developers to easily integrate Firstock's advanced trading capabilities into their Python applications.
 
@@ -21,7 +21,7 @@ The API consists of five major section
 * Market Connect
 
 ### Login
-For the Login process we require to generate the appkey and vendor code by logging in with the firstock credentials in the give link [Key Generation](https://connect.thefirstock.com/login).
+For the Login process we require to generate the appkey and vendor code by logging in with the firstock credentials in the give link [Key Generation](https://firstock.in/api/docs/login/).
 
 ```python
 from firstock import firstock
