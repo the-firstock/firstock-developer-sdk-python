@@ -129,6 +129,9 @@ try:
 except Exception as error:
     print(error)
 
-
+try:
+    from firstock.ordersNReport.getHoldingsDetailsFirstock import getHoldingsDetails
+except Exception as error:
+    print(error)
 
 

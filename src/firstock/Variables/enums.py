@@ -56,3 +56,5 @@ CONFIG_PATH = "config.json"
 BROKERAGE_CALCULATOR= "https://api.firstock.in/V1/brokerageCalculator"
 
 GETEXPIRY= "https://api.firstock.in/V1/getExpiry"
+
+GETHOLDINGSDETAILS = "https://api.firstock.in/V1/holdingsDetails"
