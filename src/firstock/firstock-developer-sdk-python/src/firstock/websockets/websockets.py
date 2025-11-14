@@ -74,7 +74,7 @@ class Firstock:
             config = {}
         
         config.setdefault('scheme', 'wss')
-        config.setdefault('host', 'websockets-mock.firstock.in')
+        config.setdefault('host', 'socket.firstock.in')
         config.setdefault('path', '/ws')
         config.setdefault('source', 'developer-api')
         config.setdefault('accept_encoding', 'gzip, deflate, br')
