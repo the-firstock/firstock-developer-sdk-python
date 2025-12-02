@@ -1,4 +1,3 @@
-import logging
 import time
 import threading
 from typing import Optional, List, Dict, Callable
@@ -26,10 +25,7 @@ except ImportError:
             unsubscribe_option_greeks as unsubscribe_option_greeks_helper
         )
     except ImportError as e:
-        print(f"Failed to import websocket_functions: {e}")
         raise
-
-logger = logging.getLogger(__name__)
 
 class FirstockWebSocket:
     def __init__(
@@ -82,26 +78,20 @@ class Firstock:
         config.setdefault('origin', 'https://firstock.in')
         config.setdefault('max_websocket_connection_retries', 3)
         config.setdefault('time_interval', 5)
-
-
+        
         base_url, headers, err = get_url_and_header_data(user_id, config)
         if err:
             return None, err
-
+        
         try:
             ws = websocket.create_connection(base_url, header=headers)
-            logger.info(f"WebSocket connection created")
-
             connections.add_connection(ws)
-
+            
             msg = ws.recv()
-            logger.info(f"Initial message received: {msg}")
-
+            
             if "Authentication successful" in msg:
-                logger.info("Authentication successful, starting message reader")
-
                 time.sleep(0.5)
-
+                
                 model_dict = model.to_dict()
                 thread = threading.Thread(
                     target=read_message,
@@ -109,23 +99,16 @@ class Firstock:
                     daemon=True
                 )
                 thread.start()
-
+                
                 time.sleep(0.5)
-
+                
                 if model.tokens:
-                    logger.info(f"Subscribing to initial tokens: {model.tokens}")
                     subscribe_err = subscribe_helper(ws, model.tokens)
-                    if subscribe_err:
-                        logger.error(f"Initial subscription error: {subscribe_err}")
-
+                
                 if model.option_greeks_tokens:
-                    logger.info(f"Subscribing to option Greeks tokens: {model.option_greeks_tokens}")
                     subscribe_err = subscribe_option_greeks_helper(ws, model.option_greeks_tokens)
-                    if subscribe_err:
-                        logger.error(f"Initial option Greeks subscription error: {subscribe_err}")
-
+                
                 return ws, None
-
             elif "Maximum sessions limit" in msg:
                 connections.delete_connection(ws)
                 err = {
@@ -134,7 +117,6 @@ class Firstock:
                     }
                 }
                 return None, err
-
             else:
                 connections.delete_connection(ws)
                 err = {
@@ -143,16 +125,14 @@ class Firstock:
                     }
                 }
                 return None, err
-
         except Exception as e:
-            logger.error(f"WebSocket initialization error: {e}", exc_info=True)
             err = {
                 "error": {
                     "message": str(e)
                 }
             }
             return None, err
-
+    
     @classmethod
     def close_websocket(cls, ws: Optional[websocket.WebSocket]) -> Optional[Dict]:
         if ws is None:
