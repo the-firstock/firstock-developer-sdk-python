@@ -69,7 +69,7 @@ class Firstock:
         if config is None:
             config = {}
         config.setdefault('scheme', 'wss')
-        config.setdefault('host', 'socket.firstock.in/V2/ws')
+        config.setdefault('host', 'socket.firstock.in/V2')
         config.setdefault('path', '/ws')
         config.setdefault('source', 'developer-api')
         config.setdefault('accept_encoding', 'gzip, deflate, br')
