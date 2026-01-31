@@ -68,9 +68,8 @@ class Firstock:
     ) -> tuple:
         if config is None:
             config = {}
-        
         config.setdefault('scheme', 'wss')
-        config.setdefault('host', 'socket.firstock.in')
+        config.setdefault('host', 'socket.firstock.in/V2/ws')
         config.setdefault('path', '/ws')
         config.setdefault('source', 'developer-api')
         config.setdefault('accept_encoding', 'gzip, deflate, br')

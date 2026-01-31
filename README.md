@@ -363,6 +363,6 @@ Refer to the Firstock Connect Documentation for the complete list of supported m
 
 * The method for accessing the websocket has been entirely revamped. Detailed information will be available in an upcoming blog post. Additionally, sample code illustrating the new method can be found in the examples section.
 
-## [1.0.2] - 2025-08-14
+## [1.1.0] - 2026-01-31
 ### Changed
 - Minor version bump for compatibility updates.
