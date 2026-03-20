@@ -134,4 +134,17 @@ try:
 except Exception as error:
     print(error)
 
+try:
+    from firstock.ordersNReport.placeAMOFirstock import placeAMO
+except Exception as error:
+    print(error)
 
+try:
+    from firstock.ordersNReport.modifyAMOFirstock import modifyAMO
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.marketConnect.optionChainGreeksFirstock import optionChainGreeks
+except Exception as error:
+    print(error)

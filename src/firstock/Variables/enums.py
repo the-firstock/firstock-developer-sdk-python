@@ -58,3 +58,9 @@ BROKERAGE_CALCULATOR= "https://api.firstock.in/V1/brokerageCalculator"
 GETEXPIRY= "https://api.firstock.in/V1/getExpiry"
 
 GETHOLDINGSDETAILS = "https://api.firstock.in/V1/holdingsDetails"
+
+PLACEAMO = "https://api.firstock.in/V1/placeAMO"
+
+MODIFYAMO = "https://api.firstock.in/V1/modifyAMO"
+
+OPTIONCHAINGREEEKS = "https://api.firstock.in/V1/optionChainGreeks"
