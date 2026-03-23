@@ -2,7 +2,7 @@ from firstock.Variables.common_imports import *
 from firstock.ordersNReport.modifyAMOFunctionality.base import *
 
 class ApiRequests(FirstockAMOModifyAPI):
-    def firstockModifyAMO(self, orderNumber, exch, tsym, qty, prc, prctyp, prd, trantype, ret, trgprc, userId):
+    def firstockModifyAMO(self, orderNumber, qty, prc, prctyp, prd, trgprc, userId):
         """
         :return:
         """
@@ -16,14 +16,10 @@ class ApiRequests(FirstockAMOModifyAPI):
                 "userId": userId,
                 "jKey": config_data[userId]['jKey'],
                 "orderNumber": orderNumber,
-                "exchange": exch,
-                "tradingSymbol": tsym,
                 "quantity": qty,
                 "price": prc,
                 "priceType": prctyp,
                 "product": prd,
-                "transactionType": trantype,
-                "retention": ret,
                 "triggerPrice": trgprc,
             }
             result = requests.post(url, json=payload)
