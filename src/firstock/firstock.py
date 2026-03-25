@@ -148,3 +148,23 @@ try:
     from firstock.marketConnect.optionChainGreeksFirstock import optionChainGreeks
 except Exception as error:
     print(error)
+
+try:
+    from firstock.ordersNReport.placeGttFirstock import placeGtt
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.ordersNReport.modifyGttFirstock import modifyGtt
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.ordersNReport.cancelGttFirstock import cancelGtt
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.ordersNReport.getGttFirstock import getGtt
+except Exception as error:
+    print(error)

@@ -64,3 +64,11 @@ PLACEAMO = "https://api.firstock.in/V1/placeAMO"
 MODIFYAMO = "https://api.firstock.in/V1/modifyAMO"
 
 OPTIONCHAINGREEEKS = "https://api.firstock.in/V1/optionChainGreeks"
+
+PLACEGTT = "https://api.firstock.in/V1/placeGttOrder"
+
+MODIFYGTT = "https://api.firstock.in/V1/modifyGttOrder"
+
+CANCELGTT = "https://api.firstock.in/V1/cancelGttOrder"
+
+GETGTT = "https://api.firstock.in/V1/GttOrderBook"
