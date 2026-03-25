@@ -3,7 +3,7 @@ from firstock.ordersNReport.placeGttFunctionality.base import *
 
 
 class ApiRequests(FirstockAPI):
-    def firstockPlaceGtt(self, userId, jKey, tradingSymbol, exchange, validity, value, OrderParams, remarks="GTT"):
+    def firstockPlaceGtt(self, userId, jKey, tradingSymbol, exchange, validity, value, OrderParams, remarks):
         try:
             url = PLACEGTT
 

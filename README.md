@@ -232,7 +232,20 @@ optionChain = firstock.optionChain(
     count="5"
 )
 ```
+### Option Chain Greeks
+```python
+from firstock import firstock
 
+optionChainGreeks = firstock.optionChainGreeks(
+    userId=userId,
+    exchange="",
+    symbol="",
+    expiry="",
+    count="",
+    strikePrice=""
+)
+```
+###
 ### Search Scrips
 ```python
 from firstock import firstock
@@ -338,6 +351,117 @@ holdings_details = firstock.getHoldingsDetails(
     userId="{{userId}}"
 )
 ```
+### Place Gtt order
+```python
+
+from firstock import firstock
+ 
+place_gtt = firstock.placeGtt(
+    userId={{userId}},
+    jKey={{Jkey}},
+    tradingSymbol="IDEA-EQ",
+    exchange="NSE",
+    validity="GTT",
+    value="8.15",
+    remarks="GTT",
+    OrderParams={
+        "exchange": "NSE",
+        "retention": "DAY",
+        "product": "C",
+        "priceType": "SL-LMT",
+        "tradingSymbol": "IDEA-EQ",
+        "transactionType": "B",
+        "price": "8.90",
+        "triggerPrice": "8.15",
+        "quantity": "10",
+        "remarks": "Test"
+    }
+)
+```
+### Modify Gtt order
+```python
+
+from firstock import firstock
+ 
+modifyGtt = firstock.modifyGtt(
+    userId={{userId}},
+    jKey={{jkey}},
+    tradingSymbol="IDEA-EQ",
+    exchange="NSE",
+    validity="GTT",
+    GTTid="26032500000094",
+    remarks="GTT",
+    OrderParams={
+        "exchange": "NSE",
+        "retention": "DAY",
+        "product": "C",
+        "priceType": "SL-LMT",
+        "tradingSymbol": "IDEA-EQ",
+        "transactionType": "B",
+        "price": "8.90",
+        "triggerPrice": "8.27",
+        "quantity": "10",
+        "remarks": "Test"
+    }
+)
+```
+### Cancel Gtt order
+```python
+
+from firstock import firstock
+
+cancel_gtt = firstock.cancelGtt(
+    userId={{userId}},
+    jKey={{jkey}},
+    GTTid="26032500000008"
+)
+```
+### Gtt order book
+```python
+
+from firstock import firstock
+ 
+gtt_orders  = firstock.getGtt(
+    userId={{userId}},
+    jKey={{jkey}}
+)
+```
+### Place AMO
+```python
+from firstock import firstock
+
+placeAMO = firstock.placeAMO(
+    userId=userId,
+    exchange="",
+    tradingSymbol="",
+    quantity="",
+    price="",
+    product="",
+    transactionType="",
+    priceType="",
+    retention="",
+    triggerPrice="",
+    remarks=""
+)
+```
+
+### Modify AMO
+```python
+from firstock import firstock
+
+modifyAMO = firstock.modifyAMO(
+    userId=userId,
+    orderNumber="",
+    quantity="",
+    price="",
+    priceType="",
+    product="",
+    triggerPrice=""
+)
+```
+
+
+
 
 Refer to the Firstock Connect Documentation for the complete list of supported methods.
 

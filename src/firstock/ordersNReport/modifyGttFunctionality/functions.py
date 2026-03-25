@@ -3,7 +3,7 @@ from firstock.ordersNReport.modifyGttFunctionality.base import *
 
 
 class ApiRequests(FirstockAPI):
-    def firstockModifyGtt(self, userId, jKey, tradingSymbol, exchange, validity, GTTid, OrderParams, remarks="GTT"):
+    def firstockModifyGtt(self, userId, jKey, tradingSymbol, exchange, validity, GTTid, OrderParams, remarks):
         try:
             url = MODIFYGTT
 

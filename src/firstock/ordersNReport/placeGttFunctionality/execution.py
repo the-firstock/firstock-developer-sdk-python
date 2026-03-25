@@ -1,8 +1,8 @@
-from firstock.ordersNReport.placeGttFunctionality.functions import *
+from firstock.ordersNReport.placeGttFunctionality.functions import ApiRequests
 
 
 class FirstockPlaceGtt:
-    def __init__(self, userId, jKey, tradingSymbol, exchange, validity, value, OrderParams, remarks="GTT"):
+    def __init__(self, userId, jKey, tradingSymbol, exchange, validity, value, OrderParams, remarks):
         self.placeGtt = ApiRequests()
         self.userId = userId
         self.jKey = jKey
@@ -14,7 +14,7 @@ class FirstockPlaceGtt:
         self.remarks = remarks
 
     def firstockPlaceGtt(self):
-        result = self.placeGtt.firstockPlaceGtt(
+        return self.placeGtt.firstockPlaceGtt(
             self.userId,
             self.jKey,
             self.tradingSymbol,
@@ -24,4 +24,3 @@ class FirstockPlaceGtt:
             self.OrderParams,
             self.remarks
         )
-        return result

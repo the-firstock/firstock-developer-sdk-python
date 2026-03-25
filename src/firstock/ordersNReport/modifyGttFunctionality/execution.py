@@ -1,8 +1,8 @@
-from firstock.ordersNReport.modifyGttFunctionality.functions import *
+from firstock.ordersNReport.modifyGttFunctionality.functions import ApiRequests
 
 
 class FirstockModifyGtt:
-    def __init__(self, userId, jKey, tradingSymbol, exchange, validity, GTTid, OrderParams, remarks="GTT"):
+    def __init__(self, userId, jKey, tradingSymbol, exchange, validity, GTTid, OrderParams, remarks):
         self.modifyGtt = ApiRequests()
         self.userId = userId
         self.jKey = jKey
@@ -14,7 +14,7 @@ class FirstockModifyGtt:
         self.remarks = remarks
 
     def firstockModifyGtt(self):
-        result = self.modifyGtt.firstockModifyGtt(
+        return self.modifyGtt.firstockModifyGtt(
             self.userId,
             self.jKey,
             self.tradingSymbol,
@@ -24,4 +24,3 @@ class FirstockModifyGtt:
             self.OrderParams,
             self.remarks
         )
-        return result
