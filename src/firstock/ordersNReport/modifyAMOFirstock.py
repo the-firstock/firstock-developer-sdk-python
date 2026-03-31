@@ -1,6 +1,6 @@
 from firstock.ordersNReport.modifyAMOFunctionality.execution import *
 
-def modifyAMO(orderNumber, quantity, price, priceType, product, triggerPrice, userId):
+def modifyAMO(orderNumber, quantity, price, priceType, product, triggerPrice, userId, mkt_protection=None):
     try:
         modifyAMO = FirstockModifyAMO(
             orderNumber=orderNumber,
@@ -9,7 +9,8 @@ def modifyAMO(orderNumber, quantity, price, priceType, product, triggerPrice, us
             prctyp=priceType,
             prd=product,
             trgprc=triggerPrice,
-            userId=userId
+            userId=userId,
+            mkt_protection=mkt_protection
         ).firstockModifyAMO()
         return modifyAMO
     except Exception as e:

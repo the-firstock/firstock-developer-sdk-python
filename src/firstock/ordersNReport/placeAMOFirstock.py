@@ -1,7 +1,7 @@
 from firstock.ordersNReport.placeAMOFunctionality.execution import *
 
 def placeAMO(exchange, tradingSymbol, quantity, price, product, transactionType,
-             priceType, retention, triggerPrice, remarks, userId):
+             priceType, retention, triggerPrice, remarks, userId, mkt_protection=None):
     try:
         placeAMO = FirstockPlaceAMO(
             exch=exchange,
@@ -14,7 +14,8 @@ def placeAMO(exchange, tradingSymbol, quantity, price, product, transactionType,
             ret=retention,
             trgprc=triggerPrice,
             remarks=remarks,
-            userId=userId
+            userId=userId,
+            mkt_protection=mkt_protection
         ).firstockPlaceAMO()
         return placeAMO
     except Exception as e:

@@ -2,15 +2,13 @@ from firstock.Variables.common_imports import *
 from firstock.ordersNReport.modifyAMOFunctionality.base import *
 
 class ApiRequests(FirstockAMOModifyAPI):
-    def firstockModifyAMO(self, orderNumber, qty, prc, prctyp, prd, trgprc, userId):
+    def firstockModifyAMO(self, orderNumber, qty, prc, prctyp, prd, trgprc, userId, mkt_protection=None):
         """
         :return:
         """
-        url = MODIFYAMO 
-
+        url = MODIFYAMO
         with open(CONFIG_PATH) as file:
             config_data = json.load(file)
-
         if userId in config_data:
             payload = {
                 "userId": userId,
@@ -22,9 +20,10 @@ class ApiRequests(FirstockAMOModifyAPI):
                 "product": prd,
                 "triggerPrice": trgprc,
             }
+            if mkt_protection is not None:
+                payload["mktProtection"] = mkt_protection
             result = requests.post(url, json=payload)
             jsonString = result.content.decode("utf-8")
             finalResult = ast.literal_eval(jsonString)
             return finalResult
-
         return not_logged_in_user()

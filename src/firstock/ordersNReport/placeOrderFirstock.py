@@ -1,8 +1,7 @@
 from firstock.ordersNReport.placeOrderFunctionality.execution import *
 
-
 def placeOrder(exchange, tradingSymbol, quantity, price, product, transactionType,
-                        priceType, retention, triggerPrice, remarks, userId):
+               priceType, retention, triggerPrice, remarks, userId, mkt_protection=None):
     try:
         placeOrder = FirstockPlaceOrder(
             exch=exchange,
@@ -15,9 +14,9 @@ def placeOrder(exchange, tradingSymbol, quantity, price, product, transactionTyp
             ret=retention,
             trgprc=triggerPrice,
             remarks=remarks,
-            userId=userId
+            userId=userId,
+            mkt_protection=mkt_protection
         ).firstockPlaceOrder()
-
         return placeOrder
     except Exception as e:
         print(e)
