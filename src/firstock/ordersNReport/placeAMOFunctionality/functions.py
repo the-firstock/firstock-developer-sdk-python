@@ -25,7 +25,7 @@ class ApiRequests(FirstockAMOAPI):
                 "remarks": remarks,
             }
             if mkt_protection is not None:
-                payload["mktProtection"] = mkt_protection
+                payload["mkt_protection"] = mkt_protection
             result = requests.post(url, json=payload)
             jsonString = result.content.decode("utf-8")
             finalResult = ast.literal_eval(jsonString)
