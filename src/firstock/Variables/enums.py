@@ -72,3 +72,5 @@ MODIFYGTT = "https://api.firstock.in/V1/modifyGttOrder"
 CANCELGTT = "https://api.firstock.in/V1/cancelGttOrder"
 
 GETGTT = "https://api.firstock.in/V1/GttOrderBook"
+
+BASKETORDER = "https://connect-go.thefirstock.tech/V1/basketOrder"
