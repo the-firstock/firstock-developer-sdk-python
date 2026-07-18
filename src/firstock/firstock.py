@@ -174,3 +174,8 @@ try:
     from firstock.ordersNReport.basketOrderFirstock import basketOrder
 except Exception as error:
     print(error)
+
+try:
+    from firstock.ordersNReport.combinedHoldingsFirstock import combinedHoldings
+except Exception as error:
+    print(error)
