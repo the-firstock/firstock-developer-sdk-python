@@ -460,6 +460,75 @@ modifyAMO = firstock.modifyAMO(
 )
 ```
 
+### Place OCO Order
+```python
+placeOcoOrder = firstock.placeOcoOrder(
+  userId="{{userId}}",
+  exchange= "NSE",
+  tradingSymbol= "VIKASECO-EQ",
+  validity= "GTT",
+  OrderParamsLeg1= {
+    "transactionType": "S",
+    "priceType": "LMT",
+    "product": "C",
+    "retention": "DAY",
+    "triggerPrice": "0.95",
+    "quantity": "1",
+    "price": "0.94"
+  },
+  OrderParamsLeg2= {
+    "transactionType": "S",
+    "priceType": "LMT",
+    "product": "C",
+    "retention": "DAY",
+    "triggerPrice": "1.18",
+    "quantity": "1",
+    "targetPrice": "1.20"
+  }
+)
+
+print(placeOcoOrder)
+```
+
+### Modify OCO Order
+```python
+modifyOcoOrderData = firstock.modifyOcoOrder(
+  userId="{{userId}}",
+  OCOid="{{OCOid}}",
+  exchange= "NSE",
+  tradingSymbol= "VIKASECO-EQ",
+  OrderParamsLeg1= {
+    "transactionType": "S",
+    "priceType": "LMT",
+    "product": "C",
+    "retention": "DAY",
+    "triggerPrice": "0.95",
+    "quantity": "1",
+    "price": "0.94"
+  },
+  OrderParamsLeg2= {
+    "transactionType": "S",
+    "priceType": "LMT",
+    "product": "C",
+    "retention": "DAY",
+    "triggerPrice": "1.18",
+    "quantity": "1",
+    "targetPrice": "1.20"
+  }
+)
+
+print(modifyOcoOrderData)
+```
+
+### Cancel OCO Order
+```python
+cancelOcoOrderData = firstock.cancelOcoOrder(
+  userId="{{userId}}",
+  OCOid="26100800000040"
+)
+
+print(cancelOcoOrderData)
+```
 
 
 

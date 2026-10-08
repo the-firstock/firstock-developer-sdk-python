@@ -7,5 +7,16 @@ venv/
 
 .idea/
 
+dist
+
 __pycache__
 
+# Python cache
+__pycache__/
+*.pyc
+
+main.py
+
+config.json
+
+launch.json

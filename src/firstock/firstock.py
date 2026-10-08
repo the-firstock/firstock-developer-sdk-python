@@ -80,6 +80,21 @@ except Exception as error:
     print(error)
 
 try:
+    from firstock.ordersNReport.placeOcoOrderFirstock import placeOcoOrder
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.ordersNReport.modifyOcoOrderFirstock import modifyOcoOrder
+except Exception as error:
+    print(error)
+
+try:
+    from firstock.ordersNReport.cancelOcoOrderFirstock import cancelOcoOrder
+except Exception as error:
+    print(error)
+
+try:
     from firstock.ordersNReport.orderBookFirstock import orderBook
 except Exception as error:
     print(error)

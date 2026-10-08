@@ -10,6 +10,12 @@ LOGOUT = "https://api.firstock.in/V1/logout"
 
 PLACEORDER = "https://api.firstock.in/V1/placeOrder"
 
+PLACEOCOORDER = "https://api.firstock.in/V1/placeOcoOrder"
+
+MODIFYOCOORDER = "https://api.firstock.in/V1/modifyOcoOrder"
+
+CANCELOCOORDER = "https://api.firstock.in/V1/cancelOcoOrder"
+
 ORDERMARGIN = "https://api.firstock.in/V1/orderMargin"
 
 ORDERBOOK = "https://api.firstock.in/V1/orderBook"
